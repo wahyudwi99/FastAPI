@@ -19,9 +19,10 @@ def get_destination(request:Request):
     return template.TemplateResponse('template_login.html', {'request':request})
 
 @app.post('/home/result', response_class=HTMLResponse)
-def result(request:Request, username:str = Form(...), email:str = Form(...)):
+def result(request:Request, username:str = Form(...), email:str = Form(...), cb:bool = Form(...)):
     print(username)
     print(email)
+    print(cb)
 
     return template.TemplateResponse('result.html', {'request':request, 'nama':username, 'email':email})
  
